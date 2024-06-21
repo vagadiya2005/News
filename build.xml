@@ -1,33 +1,25 @@
-<project name="Sample Project" default="compile" basedir=".">
-    <description>
-        A sample Ant build script.
-    </description>
-    
-    <!-- Set global properties for this build -->
-    <property name="src.dir" value="src"/>
-    <property name="build.dir" value="build"/>
-    <property name="dist.dir" value="dist"/>
-    
-    <!-- Create build directory -->
+<project name="Sample Project" default="war" basedir=".">
+    <property name="src" location="src"/>
+    <property name="dist" location="dist"/>
+
     <target name="init">
-        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
     </target>
 
-     <target name="war" depends="compile">
+    <target name="compile" depends="init">
+        <javac srcdir="${src}" destdir="${build}"/>
+    </target>
+
+    <target name="war" depends="compile">
         <mkdir dir="${dist}"/>
         <war destfile="${dist}/SampleProject.war" webxml="${src}/WEB-INF/web.xml">
             <fileset dir="${src}"/>
         </war>
     </target>
-    
-    <!-- Compile source files -->
-    <target name="compile" depends="init">
-        <javac srcdir="${src.dir}" destdir="${build.dir}"/>
-    </target>
-    
-    <!-- Package compiled classes into a jar file -->
-    <target name="dist" depends="compile">
-        <mkdir dir="${dist.dir}"/>
-        <jar destfile="${dist.dir}/myproject.jar" basedir="${build.dir}"/>
+
+    <target name="clean">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
     </target>
 </project>
