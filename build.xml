@@ -1,0 +1,26 @@
+<project name="Sample Project" default="compile" basedir=".">
+    <description>
+        A sample Ant build script.
+    </description>
+    
+    <!-- Set global properties for this build -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    
+    <!-- Create build directory -->
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+    </target>
+    
+    <!-- Compile source files -->
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}"/>
+    </target>
+    
+    <!-- Package compiled classes into a jar file -->
+    <target name="dist" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.dir}/myproject.jar" basedir="${build.dir}"/>
+    </target>
+</project>
