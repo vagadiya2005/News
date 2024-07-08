@@ -1,39 +1,119 @@
-.App {
-  text-align: center;
+/* styles.css */
+
+.hover-effect {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hover-effect:hover {
+  color: rgba(255, 255, 255, 0.82);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-bg {
+
+  background-color: #4f6dc6;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.midsection {
+  margin-top: 5px;
+  border: 5px solid #4f6dc6;
+  background-image: url("C:\shreeji\public\Images\3hhugevq.png");
+  width: 100vw;
+  height: 50vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  color: #4f6dc6;
+
+
 }
 
-.App-link {
-  color: #61dafb;
+.text {
+
+  font-weight: 900;
+  color: #4f6dc6;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-cards {
+
+  display: flex;
+  /* height: 38vh; */
+  border: 4px solid violet;
+  background-color: #212529;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+
+  
+
 }
 
+.home-card {
+
+  width: 100%;
+  /* height: 4rem; */
+  height: 100%;
+  border: 2px solid white;
+  background-color: #c64f8c;
+  padding: 25px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.chover{
+
+    /* transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+      background-color: red;
+}
+
+.services{
+
+
+ padding: 20px;
+background-color:  #212529;
+color: white;
+
+
+}
+
+@media (max-width: 780px) {
+  
+.home-cards{
+
+  flex-direction: column;
+  background-color: white;
+ 
+ 
+}
+
+}
+
+.cards{
+
+display: flex;
+justify-content: space-around;
+margin: 40px;
+
+}
+
+.aboutimg{
+
+  width: 100vw;
+  height: 45vh;
+  border: 3px solid darkgray;
+  background-image: url(https://watermark.lovepik.com/photo/20211203/large/lovepik-container-ship-blue-sea-blue-sky-picture_501458189.jpg);
+  background-repeat: no-repeat; /* other values: repeat, repeat-x, repeat-y */
+  background-size: cover; /* other values: contain, auto, width height */
+  background-position: center; /* other values: top, bottom, left, right, x% y%, xpx ypx */
+
+
+}

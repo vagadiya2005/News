@@ -1,0 +1,11 @@
+/* styles.css */
+.hover-effect {
+    text-decoration: none;
+    color: red;
+    transition: color 0.3s ease;
+  }
+  
+  .hover-effect:hover {
+    color: red;
+  }
+  
