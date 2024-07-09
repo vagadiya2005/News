@@ -1,0 +1,125 @@
+/* src/components/Footer.css */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* CSS for Footer */
+footer {
+  background-color: lightseagreen;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-container .footer-content p a:link,
+.footer-container .footer-content p a:visited,
+.footer-container .footer-content p a:hover,
+.footer-container .footer-content p a:active,
+.footer-container .footer-links p a:link,
+.footer-container .footer-links p a:visited,
+.footer-container .footer-links p a:hover,
+.footer-container .footer-links p a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-content,
+.footer-links,
+.footer-social,
+.footer-about,
+.footer-contact,
+.footer-terms {
+  margin: 10px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.hero {
+  background: inherit;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  margin: 0 10px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.social-icons a .fab,
+.social-icons a .fas {
+  line-height: 40px;
+  font-size: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.social-icons a::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: -90px;
+  left: 0;
+  background: linear-gradient(-25deg, lightseagreen, lightyellow);
+  position: absolute;
+  transition: 0.5s;
+}
+
+.social-icons a:hover::after {
+  top: 0;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a.email:hover {
+  color: #d44638;
+}
+
+.social-icons a.facebook:hover {
+  color: #3b5998;
+}
+
+.social-icons a.twitter:hover {
+  color: #1da1f2;
+}
+
+.social-icons a.linkedin:hover {
+  color: #0077b5;
+}
+
+.social-icons a.instagram:hover {
+  color: #e1306c;
+}
