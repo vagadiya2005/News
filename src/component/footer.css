@@ -1,19 +1,50 @@
-/* src/components/Footer.css */
-
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* CSS for Footer */
 footer {
-  background-color: lightseagreen;
-  padding: 20px;
+  background-color: #424242;
+  padding: 40px 20px;
+  color: #ffffff;
   text-align: center;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-content,
+.footer-links,
+.footer-about,
+.hero {
+  margin: 20px;
+  flex: 1 1 200px;
+}
+
+.footer-content h3,
+.footer-links h3,
+.footer-about h3,
+.hero h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-content p,
+.footer-links p,
+.footer-about p {
+  margin: 5px 0;
+  font-size: 14px;
 }
 
 .footer-container .footer-content p a:link,
@@ -24,17 +55,14 @@ footer {
 .footer-container .footer-links p a:visited,
 .footer-container .footer-links p a:hover,
 .footer-container .footer-links p a:active {
-  color: inherit;
+  color: #ffffff;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.footer-content,
-.footer-links,
-.footer-social,
-.footer-about,
-.footer-contact,
-.footer-terms {
-  margin: 10px;
+.footer-container .footer-content p a:hover,
+.footer-container .footer-links p a:hover {
+  color: #BDBDBD;
 }
 
 .footer-bottom {
@@ -67,7 +95,7 @@ h3 {
   height: 40px;
   text-align: center;
   text-decoration: none;
-  color: #000;
+  color: #ffffff;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
   border-radius: 50%;
   margin: 0 10px;
@@ -90,9 +118,10 @@ h3 {
   height: 100%;
   top: -90px;
   left: 0;
-  background: linear-gradient(-25deg, lightseagreen, lightyellow);
+  background: linear-gradient(-35deg, lightblue, #fdfdfd);
   position: absolute;
   transition: 0.5s;
+  z-index: -1; /* Ensure gradient is below icons */
 }
 
 .social-icons a:hover::after {
@@ -122,4 +151,30 @@ h3 {
 
 .social-icons a.instagram:hover {
   color: #e1306c;
+}
+
+.footer-copy {
+  padding-top: 20px;
+  border-top: 1px solid #444;
+}
+
+.footer-copy h4 {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 767.98px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content,
+  .footer-links,
+  .footer-about,
+  .hero {
+    margin: 10px 0;
+  }
 }
