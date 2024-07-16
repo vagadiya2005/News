@@ -64,9 +64,6 @@ body {
 
 .intro-cards {
   padding: 40px 0;
-  /* background-image: url('/Users/md/News/src/component/logo.png');
-  background-repeat: no-repeat;
-  background-position: right; */
 }
 
 .slogan{
@@ -94,7 +91,8 @@ body {
 .logo{
   /* height: 450vh; */
   border-radius: 40%;
-  border-bottom: #000000 solid;
+  /* border: #000000 solid; */
+  justify-content: center;
 }
 
 .intro-cards .card .card-title {
@@ -412,4 +410,110 @@ body {
   .products-description {
     font-size: 0.9em;
   }
+}
+
+
+
+
+/* animation */
+
+/* src/styles.css */
+
+/* Keyframes for various animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Common styles for animated elements */
+.animated {
+  visibility: visible;
+}
+
+/* Add the desired animations to the elements */
+.fade-in {
+  opacity: 0;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.bounce-in {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.fade-in-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
 }

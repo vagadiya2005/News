@@ -3,10 +3,9 @@ import './midsection.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import InfoCard from './Infocard';
 import IntroCard from './Introcard';
-import inorganic from './inorganic.jpg';
 import organic from './organic.jpg';
+import inorganic from './inorganic.jpg';
 import agro from './agro.webp';
-
 
 export default function Midsection() {
   return (
@@ -29,29 +28,19 @@ export default function Midsection() {
         </div>
 
         <ul className="service-description mx-auto">
-          <li>Advice and information on when and where to use our chemical products.</li>
+          <li>Advice and information on when and where to use our pesticides products.</li>
           <li>
             Products for hobby farmers through to agricultural operations - all in
             <span className="nowrap"> simple convenient packaging.</span>
           </li>
           <li>Specialist products supporting a diverse range of crops including:
 
-            <li> agricultural-organic-inorganic</li>
+            <li>broadcast-horticulture-viticulture-cotton-pasture-seed supply</li>
 
           </li>
         </ul>
 
 
-      </div>
-      <div className="products-section container-fluid mb-0 text-center">
-        <div className="row my-4">
-          <div className="col-12">
-            <h2 className="products-title">PRODUCTS</h2>
-            <p className="products-description">
-              The company produces a range of chemical products with a total production capacity of up to thousands of tons per month distributed across various factory applications in the globe and domestic market. Including agro chemicals, organic chemical, inorganic chemical and paint thinner, etc.
-            </p>
-          </div>
-        </div>
       </div>
 
       <div className="service-cards d-flex justify-content-around flex-wrap">
