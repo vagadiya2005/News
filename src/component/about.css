@@ -1,0 +1,90 @@
+/* about.css */
+.about-container {
+    font-family: Arial, sans-serif;
+}
+
+.about-header {
+    position: relative;
+}
+
+.cover-image {
+    /* background-image: url('/images/cover-image.jpg');  */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    border-bottom: #f2f2f2 solid 1px;
+}
+
+.cover-text {
+    text-align: center;
+}
+
+.cover-text h1 {
+    font-size: 2.5rem; /* Adjust as needed */
+    margin: 0;
+}
+
+.cover-text p {
+    font-size: 1.2rem; /* Adjust as needed */
+}
+
+.about-section {
+    padding: 50px;
+    background-color: #f9f9f9; /* Adjust the background color */
+}
+
+.about-partitions {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Space between the two partitions */
+}
+
+p{
+    text-align: justify;
+    font-weight: 300;
+}
+
+
+
+.partition {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between the image and text */
+    flex: 1;
+}
+
+.vision-image, .mission-image {
+    max-width: 30%;
+    height: auto;
+    margin-bottom: 15px;
+
+}
+.partition-mission-image{
+justify-content: end;
+
+}
+
+.text-content {
+    flex: 1; /* Allows text to take remaining space */
+}
+
+.text-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.divider {
+    width: 2px; /* Width of the line */
+    background-color: #e1e1e1; /* Grey color of the line */
+    height: auto; /* Adjust to fit the height of the sections */
+}
