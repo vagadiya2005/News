@@ -1,14 +1,15 @@
 /* about.css */
 .about-container {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
 }
 
 .about-header {
     position: relative;
+    background-color: #ffffff;
 }
 
 .cover-image {
-    /* background-image: url('/images/cover-image.jpg');  */
     background-size: cover;
     background-position: center;
     height: 300px; /* Adjust the height as needed */
@@ -16,7 +17,6 @@
     align-items: center;
     justify-content: center;
     color: #000000;
-    border-bottom: #f2f2f2 solid 1px;
 }
 
 .cover-text {
@@ -24,67 +24,202 @@
 }
 
 .cover-text h1 {
-    font-size: 2.5rem; /* Adjust as needed */
+    font-size: 3rem; /* Adjust as needed */
     margin: 0;
 }
 
 .cover-text p {
-    font-size: 1.2rem; /* Adjust as needed */
+    font-size: 1.5rem; /* Adjust as needed */
 }
 
+
+/* inteo section  */
+.intro-section {
+    background: #f8f9fa; 
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 1000px;
+    margin: 40px auto;
+  }
+  
+  .intro-section h2 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left;
+  }
+  
+  .intro-section h3 {
+    font-size: 1.2em;
+    font-weight: 450;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #666;
+  }
+  
+  .intro-section p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .intro-section p:last-of-type {
+    margin-bottom: 0;
+  }
+
+/* vision mision  section  */
 .about-section {
     padding: 50px;
-    background-color: #f9f9f9; /* Adjust the background color */
+    background-color: #f1f3f5; 
+    
 }
 
-.about-partitions {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px; /* Space between the two partitions */
-}
-
-p{
-    text-align: justify;
-    font-weight: 300;
-}
-
-
-
-.partition {
+.about-partition {
     display: flex;
     align-items: center;
-    gap: 20px; /* Space between the image and text */
-    flex: 1;
+    justify-content: space-between;
+    margin: 0 120px;
+    margin-bottom: 50px;
 }
 
-.vision-image, .mission-image {
-    max-width: 30%;
+.about-image {
+    width: 28%; /* Smaller image size */
     height: auto;
-    margin-bottom: 15px;
-
-}
-.partition-mission-image{
-justify-content: end;
-
+    border-radius: 20px;
+    box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1);
 }
 
 .text-content {
-    flex: 1; /* Allows text to take remaining space */
+    width: 50%;
+    text-align: justify;
 }
 
 .text-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
 .text-content p {
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333333;
+    font-weight: 300;
+    text-align: justify; /* Justified text */
 }
 
-.divider {
-    width: 2px; /* Width of the line */
-    background-color: #e1e1e1; /* Grey color of the line */
-    height: auto; /* Adjust to fit the height of the sections */
+/* Certificate Section Styles */
+.certificate-section {
+    padding: 50px;
+    background-color: #ffffff;
+}
+
+.certificate-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.certificate-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.certificate-iframe {
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    border: none;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .about-partition {
+        margin: 0 60px;
+    }
+
+    .about-image {
+        width: 35%;
+    }
+
+    .text-content {
+        width: 55%;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-partition {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 30px;
+    }
+
+    .about-image {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .text-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-partition {
+        margin: 0 20px;
+    }
+
+    .about-image {
+        width: 70%;
+    }
+
+    .text-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-partition {
+        margin: 0 10px;
+    }
+
+    .cover-text h1 {
+        font-size: 2rem;
+    }
+
+    .cover-text p {
+        font-size: 1rem;
+    }
+
+    .about-image {
+        width: 90%;
+    }
+
+    .text-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .text-content p {
+        font-size: 0.9rem;
+    }
+
+    .certificate-section {
+        padding: 30px 10px;
+    }
+
+    .certificate-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .certificate-iframe {
+        height: 300px;
+    }
 }

@@ -38,7 +38,7 @@ body {
 .business-section {
   background-color: #ffffff;
   padding: 100px 100px;
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
   
 }
 
@@ -184,11 +184,12 @@ body {
   transition: transform 0.3s ease;
   flex: 1 0 30%;
   /* Flex item with initial basis of 30% */
-  margin: 15px;
+  margin: 20px;
+  margin-top: 25px;
 }
 
 .info-card:hover {
-  transform: scale(1);
+  transform: scale(1.03);
   /* Slightly enlarge the card on hover */
 }
 
@@ -223,7 +224,7 @@ body {
 }
 
 .info-card:hover .info-card-content {
-  opacity: 0.9;
+  opacity: 0.95;
   /* Show the description on hover */
 }
 
@@ -412,108 +413,3 @@ body {
   }
 }
 
-
-
-
-/* animation */
-
-/* src/styles.css */
-
-/* Keyframes for various animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes bounceIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Common styles for animated elements */
-.animated {
-  visibility: visible;
-}
-
-/* Add the desired animations to the elements */
-.fade-in {
-  opacity: 0;
-}
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.slide-in {
-  opacity: 0;
-  transform: translateX(-30px);
-}
-
-.zoom-in {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.bounce-in {
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-.fade-in-slide-up {
-  opacity: 0;
-  transform: translateY(30px);
-}
