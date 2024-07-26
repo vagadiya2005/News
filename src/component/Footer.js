@@ -29,11 +29,10 @@ const Footer = () => {
         <div className="hero">
           <h3>SOCIAL</h3>
           <div className="social-icons">
-            <a href="https://facebook.com" className="social-icon facebook"><i className="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com" className="social-icon twitter"><i className="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com" className="social-icon linkedin"><i className="fab fa-linkedin-in"></i></a>
-            <a href="https://instagram.com" className="social-icon instagram"><i className="fab fa-instagram"></i></a>
-            <a href="mailto:info@example.com" className="social-icon email"><i className="fas fa-envelope"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61559652141405&mibextid=ZbWKwL" target="_blank" className="social-icon facebook" ><i className="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/shreeji-international-si/" target="_blank" className="social-icon linkedin"><i className="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/shreeji_international13?igsh=azVrZTlqcTIwN3F4" target="_blank" className="social-icon instagram"><i className="fab fa-instagram"></i></a>
+            <a href="mailto:contact@shreejiinternationals.in" className="social-icon email"><i className="fas fa-envelope"></i></a>
           </div>
         </div>
       </div>

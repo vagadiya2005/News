@@ -1,0 +1,177 @@
+.product-info-container {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-wrap:wrap;
+    gap: 0;
+}
+
+.product-header {
+    position: relative;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.product-cotainer {
+    margin: 15px 25px;
+    flex: 1 1 calc(33% - 20px);
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    flex: 1 1 calc(50% - 20px);
+    box-sizing: border-box;
+    transition: flex 0.5s ease-in-out; /* Smooth transition for expanding */
+}
+
+.product-item.expanded .product-title::after {
+    transform: rotate(90deg); /* Rotate arrow when expanded */
+}
+
+.product-title {
+    padding: 10px;
+    margin: 5px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.product-title::after {
+    content: '';
+    display: inline-block;
+    border-left: 9px solid transparent;
+    border-bottom: 9px solid #000;
+    margin-left: auto; /* Align to the right */
+    transition: transform 0.5s ease-in-out;
+}
+
+.product-info {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    max-height: 100px;
+    animation: slideDown 0.5s ease-out;
+}
+
+
+.product-item.expanded .product-info {
+    max-height: 500px; /* Ensure this is large enough for your table */
+}
+
+
+/* zoom the image  */
+.product-info img {
+    width: 100px; /* Fixed size for the image */
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+}
+
+.product-info img:hover {
+    transform: scale(2); /* Scale image to 1.5 times its original size */
+}
+
+
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+    }
+    to {
+        max-height: 100%; /* Change this value to be more dynamic */
+        opacity: 1;
+        padding: 10px; /* Add back the padding to the expanded section */
+        margin: 5px; /* Add back the margin to the expanded section */
+    }
+}
+
+/* Additional styles for the table */
+.product-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.product-info th, .product-info td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.product-info img {
+    width: 100px; /* Fixed size for the image */
+    height: auto;
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* categories menu  */
+.product-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.product-menu button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-menu button:hover {
+    background-color: #0056b3;
+}
+
+
+.product-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+
+
+/* Responsive design adjustments */
+@media (max-width: 1200px) {
+    .product-cotainer {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-cotainer {
+        flex: 1 1 calc(100% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-title {
+        font-size: 14px;
+        padding: 8px;
+    }
+    
+    .product-info {
+        padding: 8px;
+    }
+
+    .product-info th, .product-info td {
+        padding: 6px;
+    }
+
+    .product-info img {
+        width: 80px; /* Adjust image size for smaller screens */
+    }
+}
