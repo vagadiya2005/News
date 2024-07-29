@@ -2,7 +2,7 @@
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     display: flex;
-    flex-wrap:wrap;
+    flex-direction: column;
     gap: 0;
 }
 
@@ -12,14 +12,24 @@
     width: 100%;
 }
 
-.product-cotainer {
+.product-section {
     margin: 15px 25px;
-    flex: 1 1 calc(33% - 20px);
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensure space between items */
+}
+
+.product-container {
+    margin: 15px;
+    flex: 1 1 calc(50% - 30px); /* Adjusted for two products per row */
+    box-sizing: border-box;
 }
 
 .product-item {
     border: 1px solid #ccc;
-    flex: 1 1 calc(50% - 20px);
     box-sizing: border-box;
     transition: flex 0.5s ease-in-out; /* Smooth transition for expanding */
 }
@@ -54,11 +64,9 @@
     animation: slideDown 0.5s ease-out;
 }
 
-
 .product-item.expanded .product-info {
     max-height: 500px; /* Ensure this is large enough for your table */
 }
-
 
 /* zoom the image  */
 .product-info img {
@@ -72,8 +80,6 @@
 .product-info img:hover {
     transform: scale(2); /* Scale image to 1.5 times its original size */
 }
-
-
 
 @keyframes slideDown {
     from {
@@ -110,50 +116,16 @@
     margin-top: 10px;
 }
 
-
-/* categories menu  */
-.product-menu {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 20px auto;
-}
-
-.product-menu button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.product-menu button:hover {
-    background-color: #0056b3;
-}
-
-
-.product-list {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-
-
-
 /* Responsive design adjustments */
 @media (max-width: 1200px) {
-    .product-cotainer {
-        flex: 1 1 calc(50% - 10px);
+    .product-container {
+        flex: 1 1 calc(50% - 30px);
     }
 }
 
 @media (max-width: 768px) {
-    .product-cotainer {
-        flex: 1 1 calc(100% - 10px);
+    .product-container {
+        flex: 1 1 calc(100% - 20px);
     }
 }
 

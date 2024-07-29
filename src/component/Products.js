@@ -1,66 +1,78 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './ProductInfo.css';
 
-const products = {
-    agroChemical: [
-        {
-            id: 1,
-            name: 'Product 1',
-            info: {
-                technicalName: 'Tech Name 1',
-                casNo: '123-45-6',
-                image: 'https://regenesis.com/wp-content/uploads/2020/04/benzene.png',
-                packing: 'Packing 1'
-            }
-        },
-        {
-            id: 2,
-            name: 'Product 2',
-            info: {
-                technicalName: 'Tech Name 2',
-                casNo: '123-45-6',
-                image: 'https://regenesis.com/wp-content/uploads/2020/04/benzene.png',
-                packing: 'Packing 2'
-            }
-        },
-        
-        // Add more Agro Chemical products here
-    ],
-    organic: [
-        {
-            id: 2,
-            name: 'Product 2',
-            info: {
-                technicalName: 'Tech Name 2',
-                casNo: '123-45-7',
-                image: 'https://www.shutterstock.com/image-vector/benzene-molecule-structure-organic-chemical-260nw-1911236971.jpg',
-                packing: 'Packing 2'
-            }
-        },
-        // Add more Organic products here
-    ],
-    inorganic: [
-        {
-            id: 3,
-            name: 'Product 3',
-            info: {
-                technicalName: 'Tech Name 3',
-                casNo: '123-45-8',
-                image: 'https://via.placeholder.com/100',
-                packing: 'Packing 3'
-            }
-        },
-        // Add more Inorganic products here
-    ]
-};
-
 const ProductInfo = () => {
+    const [products, setProducts] = useState({ agroChemical: [], organic: [], inorganic: [] });
     const [activeProduct, setActiveProduct] = useState(null);
-    const [activeCategory, setActiveCategory] = useState('agroChemical');
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const agroChemicalResponse = await axios.get('http://api.shreejiinternationals.in/products/agrochemical');
+                const organicResponse = await axios.get('http://api.shreejiinternationals.in/products/organic');
+                const inorganicResponse = await axios.get('http://api.shreejiinternationals.in/products/inorganic');
+
+
+                console.log('Agrochemical Response:', agroChemicalResponse.data);
+                
+                setProducts({
+                    agroChemical: agroChemicalResponse.data,
+                    organic: organicResponse.data,
+                    inorganic: inorganicResponse.data,
+                });
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
 
     const toggleProductInfo = (productId) => {
         setActiveProduct(activeProduct === productId ? null : productId);
     };
+
+    const renderProducts = (category) => (
+        products[category].map((product) => (
+            <div className="product-container" key={product.id}>
+                <div
+                    className={`product-item ${activeProduct === product.id ? 'expanded' : ''}`}
+                >
+                    <div
+                        className="product-title"
+                        onClick={() => toggleProductInfo(product.id)}
+                    >
+                        {product.name}
+                    </div>
+                    {activeProduct === product.id && (
+                        <div className="product-info">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Technical Name</th>
+                                        <td>{product.info.technicalName}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>CAS No.</th>
+                                        <td>{product.info.casNo}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Chemical Structure</th>
+                                        <td><img src={product.info.image} alt="Chemical Structure" /></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Packing</th>
+                                        <td>{product.info.packing}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    )}
+                </div>
+            </div>
+        ))
+    );
 
     return (
         <div className="product-info-container">
@@ -72,50 +84,23 @@ const ProductInfo = () => {
                     </div>
                 </div>
             </header>
-            <nav className="product-menu">
-                <button onClick={() => setActiveCategory('agroChemical')}>Agro Chemical</button>
-                <button onClick={() => setActiveCategory('organic')}>Organic</button>
-                <button onClick={() => setActiveCategory('inorganic')}>Inorganic</button>
-            </nav>
-            <div className="product-list">
-                {products[activeCategory].map((product) => (
-                    <div className="product-cotainer" key={product.id}>
-                        <div
-                            className={`product-item ${activeProduct === product.id ? 'expanded' : ''}`}
-                        >
-                            <div
-                                className="product-title"
-                                onClick={() => toggleProductInfo(product.id)}
-                            >
-                                {product.name}
-                            </div>
-                            {activeProduct === product.id && (
-                                <div className="product-info">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <th>Technical Name</th>
-                                                <td>{product.info.technicalName}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>CAS No.</th>
-                                                <td>{product.info.casNo}</td>
-                                            </tr>
-                                            <tr>
-                                                <th>Chemical Structure</th>
-                                                <td><img src={product.info.image} alt="Chemical Structure" /></td>
-                                            </tr>
-                                            <tr>
-                                                <th>Packing</th>
-                                                <td>{product.info.packing}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                ))}
+            <div className="product-section">
+                <h2>Agrochemicals</h2>
+                <div className="product-list">
+                    {renderProducts('agroChemical')}
+                </div>
+            </div>
+            <div className="product-section">
+                <h2>Organic</h2>
+                <div className="product-list">
+                    {renderProducts('organic')}
+                </div>
+            </div>
+            <div className="product-section">
+                <h2>Inorganic</h2>
+                <div className="product-list">
+                    {renderProducts('inorganic')}
+                </div>
             </div>
         </div>
     );

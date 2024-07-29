@@ -3,9 +3,7 @@ import './midsection.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import InfoCard from './Infocard';
 import IntroCard from './Introcard';
-import organic from './organic.jpg';
-import inorganic from './inorganic.jpg';
-import agro from './agro.webp';
+
 
 export default function Midsection() {
   return (
@@ -45,17 +43,17 @@ export default function Midsection() {
 
       <div className="service-cards d-flex justify-content-around flex-wrap">
         <InfoCard
-          image={agro}
+          image='asset/images/agro.webp'
           title="Agrochemicals"
           description="We supply and export all agrochemicals with superior quality and the best packaging materials. Our company deals in all chemicals from seed to harvest."
         />
         <InfoCard
-          image={inorganic}
+          image='asset/images//inorganic.jpg'
           title="Inorganic"
           description="Our company trades and exports the best range of inorganic chemicals used for all industrial purposes. We provide the best door-to-door services."
         />
         <InfoCard
-          image={organic}
+          image='asset/images//organic.jpg'
           title="Organic"
           description="Shreeji International Company supplies and exports organic chemicals manufactured by a highly experienced scientific team using the best quality materials."
         />

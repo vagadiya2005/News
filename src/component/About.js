@@ -1,13 +1,12 @@
 // About.js
 import './about.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import vision from './Vison.jpg';
-import mission from './Mission.jpg';
 import { Worker, Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
-import certificatePdf from './IEC_CODE.pdf'; // Path to your certificate image
 
 const About = () => {
+
+
   return (
     <div className="about-container">
       <header className="about-header">
@@ -33,10 +32,10 @@ const About = () => {
             <h2>Our Vision</h2>
             <p>To constantly endeavor to create a sustainable position as one of the leading but diversified chemical companies with strong manufacturers and exporters based on industrial chemicals products aiming for global presence with worldwide product acceptability.</p>
           </div>
-          <img src={vision} alt="Our Vision" className="about-image" />
+          <img src='asset/images//Vison.jpg' alt="Our Vision" className="about-image" />
         </div>
         <div className="about-partition">
-          <img src={mission} alt="Our Mission" className="about-image" />
+          <img src='asset/images//Mission.jpg' alt="Our Mission" className="about-image" />
           <div className="text-content">
             <h2>Our Mission</h2>
             <p>Continuously grow, prosper, achieve economies of scale, and establish ourselves as a producer of quality products through continual improvement in performance, meeting customers' expectations, and striving to develop value options from side stream by-products.</p>
@@ -48,7 +47,7 @@ const About = () => {
         <h2>CERTIFICATES OF Shreeji International</h2>
         <div className="certificate-container">
           <iframe
-            src={certificatePdf}
+            src='asset/images//IEC_CODE.pdf'
             className="certificate-iframe"
             title="Certificate"
           ></iframe>
