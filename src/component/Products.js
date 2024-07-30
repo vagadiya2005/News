@@ -13,13 +13,14 @@ const ProductInfo = () => {
                 const organicResponse = await axios.get('http://api.shreejiinternationals.in/products/organic');
                 const inorganicResponse = await axios.get('http://api.shreejiinternationals.in/products/inorganic');
 
-
                 console.log('Agrochemical Response:', agroChemicalResponse.data);
-                
+                console.log('Organic Response:', organicResponse.data);
+                console.log('Inorganic Response:', inorganicResponse.data);
+
                 setProducts({
-                    agroChemical: agroChemicalResponse.data,
-                    organic: organicResponse.data,
-                    inorganic: inorganicResponse.data,
+                    agroChemical: Array.isArray(agroChemicalResponse.data) ? agroChemicalResponse.data : [],
+                    organic: Array.isArray(organicResponse.data) ? organicResponse.data : [],
+                    inorganic: Array.isArray(inorganicResponse.data) ? inorganicResponse.data : [],
                 });
             } catch (error) {
                 console.error('Error fetching products:', error);
@@ -29,41 +30,47 @@ const ProductInfo = () => {
         fetchProducts();
     }, []);
 
-    const toggleProductInfo = (productId) => {
-        setActiveProduct(activeProduct === productId ? null : productId);
+    const toggleProductInfo = (_id) => {
+        setActiveProduct(activeProduct === _id ? null : _id);
     };
 
-    const renderProducts = (category) => (
-        products[category].map((product) => (
-            <div className="product-container" key={product.id}>
+    const renderProducts = (category) => {
+        const categoryProducts = products[category];
+        if (!Array.isArray(categoryProducts) || categoryProducts.length === 0) {
+            return <p>No products available</p>;
+        }
+        return categoryProducts.map((product) => (
+            <div className="product-container" key={product._id}>
                 <div
-                    className={`product-item ${activeProduct === product.id ? 'expanded' : ''}`}
+                    className={`product-item ${activeProduct === product._id ? 'expanded' : ''}`}
                 >
                     <div
                         className="product-title"
-                        onClick={() => toggleProductInfo(product.id)}
+                        onClick={() => toggleProductInfo(product._id)}
                     >
                         {product.name}
                     </div>
-                    {activeProduct === product.id && (
+                    {activeProduct === product._id && (
                         <div className="product-info">
                             <table>
                                 <tbody>
                                     <tr>
                                         <th>Technical Name</th>
-                                        <td>{product.info.technicalName}</td>
+                                        <td>{product.TechnicalName || 'N/A'}</td>
                                     </tr>
                                     <tr>
                                         <th>CAS No.</th>
-                                        <td>{product.info.casNo}</td>
+                                        <td>{product.CASno || 'N/A'}</td>
                                     </tr>
                                     <tr>
                                         <th>Chemical Structure</th>
-                                        <td><img src={product.info.image} alt="Chemical Structure" /></td>
+                                        <td>
+                                            <img src={product.ChemicalStructure || 'default-image-url'} alt="Chemical Structure" />
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>Packing</th>
-                                        <td>{product.info.packing}</td>
+                                        <td>{product.Packing || 'N/A'}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -71,8 +78,8 @@ const ProductInfo = () => {
                     )}
                 </div>
             </div>
-        ))
-    );
+        ));
+    };
 
     return (
         <div className="product-info-container">
