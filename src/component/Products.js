@@ -88,6 +88,11 @@ const ProductInfo = () => {
                     <div className="cover-text">
                         <h1>Our Products</h1>
                         <p>Quality Products for Quality Produce</p>
+                        <div className="brochure-download">
+                            <a href="asset/images/SIO-Brochure.pdf" target='_blank'>
+                                <button>Download Brochure</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </header>
